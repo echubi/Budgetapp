@@ -44,6 +44,8 @@ body {
 }
 .income,
 .expenditure {
+	display: flex;
+    justify-content: space-between;
 	height: 45px; 	
     padding: 12px;
     text-transform: uppercase;
@@ -59,7 +61,6 @@ body {
 }
 
 .income-text, .expenditure-text {
-    float: left;
     font-size: 13px;
     margin-top: 2px;
     color: #444;
@@ -75,8 +76,6 @@ body {
     float: left;
     color: #FF5049;
 }
-
-.right { float: right; }
 
 .add {
     padding: 14px;

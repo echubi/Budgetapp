@@ -3,7 +3,9 @@
 <head>
 	<title>Budget app</title>
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
  	<div class="top">
@@ -12,19 +14,22 @@
                     Available Budget in a Month
                 </div>
                 
-                <div class="budget-value">+ 0.00</div>
+                <div class="budget-value">
+                    <label id="value">budget()</label>
+                    <button onclick="budget()">Calculate</button>
+                </div>
                 
                 <div class="income ">
                     <div class="income-text">Income</div>
                     <div class="right">
-                        <div class="income-value">+ 0.00</div>
+                        <div class="income-value"><input type="text" id="income" placeholder="+ 0.00"></div>
                     </div>
                 </div>
                 
                 <div class="expenditure">
                     <div class="expenditure-text">Expenditure</div>
                     <div class="right">
-                        <div class="expenditure-value">- 0.00</div>
+                        <div class="expenditure-value"><input type="text" id="expense" placeholder="- 0.00"></div>
                     </div>
                 </div>
             </div>
@@ -44,6 +49,25 @@
                     <button class="add-btn"><i class="ion-ios-checkmark-outline"></i></button>
                 </div>
             </div>
-            
+
+<script>
+    function budget(){
+        var x = document.getElementById("income").value;
+        var y = document.getElementById("expense").value;
+        // if (x > y) {
+        //     var z = x - y;
+        // }
+        // if (y > x) {
+        //     var z = y - x;
+        // }
+        if (x == y) {
+            var z = "0.00";
+        }
+        else {
+            var z = x - y;
+        }
+        document.getElementById("value").innerHTML = z;
+    }
+</script>        
 </body>
 </html>
